@@ -1,0 +1,160 @@
+<!-- 
+==============================================
+עין-צופיה Pro - קוד להטמעה ב-Wix
+==============================================
+
+הוראות שימוש:
+1. פתח עורך Wix
+2. הוסף אלמנט "HTML iframe" 
+3. העתק והדבק את הקוד למטה
+4. התאם גודל לפי צורך
+5. פרסם!
+
+==============================================
+-->
+
+<!-- גרסה בסיסית -->
+<iframe 
+  src="https://YOUR-APP-NAME.streamlit.app" 
+  width="100%" 
+  height="900px" 
+  frameborder="0"
+  style="border: none; border-radius: 8px;">
+</iframe>
+
+
+<!-- גרסה מעוצבת עם רקע -->
+<div style="background: #f8f9fa; padding: 30px; border-radius: 12px;">
+  <iframe 
+    src="https://YOUR-APP-NAME.streamlit.app" 
+    width="100%" 
+    height="900px" 
+    frameborder="0"
+    style="border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  </iframe>
+</div>
+
+
+<!-- גרסה עם כותרת -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="color: #1a73e8; font-size: 36px; font-weight: 400; margin-bottom: 10px;">
+      👁️ מערכת ניתוח וידאו
+    </h2>
+    <p style="color: #5f6368; font-size: 18px;">
+      ניתוח מקצועי עם בינה מלאכותית
+    </p>
+  </div>
+  
+  <iframe 
+    src="https://YOUR-APP-NAME.streamlit.app" 
+    width="100%" 
+    height="900px" 
+    frameborder="0"
+    style="border: none; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+  </iframe>
+</div>
+
+
+<!-- גרסה responsive (מתאים למובייל) -->
+<style>
+  .ein-tzofia-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .ein-tzofia-iframe {
+    width: 100%;
+    height: 900px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .ein-tzofia-iframe {
+      height: 700px;
+    }
+    
+    .ein-tzofia-container {
+      padding: 10px;
+    }
+  }
+</style>
+
+<div class="ein-tzofia-container">
+  <iframe 
+    class="ein-tzofia-iframe"
+    src="https://YOUR-APP-NAME.streamlit.app" 
+    frameborder="0">
+  </iframe>
+</div>
+
+
+<!-- גרסה עם loader (אנימציית טעינה) -->
+<div style="position: relative; width: 100%; height: 900px;">
+  <div id="loader" style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    color: #5f6368;
+  ">
+    <div style="
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #1a73e8;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    "></div>
+    טוען...
+  </div>
+  
+  <iframe 
+    src="https://YOUR-APP-NAME.streamlit.app" 
+    width="100%" 
+    height="100%" 
+    frameborder="0"
+    style="border: none; border-radius: 8px;"
+    onload="document.getElementById('loader').style.display='none'">
+  </iframe>
+</div>
+
+<style>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
+
+<!--
+==============================================
+הערות חשובות:
+==============================================
+
+1. החלף את "YOUR-APP-NAME" בכתובת האמיתית שלך מ-Streamlit Cloud
+
+2. התאם גובה לפי צורך:
+   - height="900px" - מומלץ
+   - height="1200px" - לתוכן ארוך
+   - height="700px" - למובייל
+
+3. אם המערכת לא מופיעה:
+   - בדוק שה-URL נכון
+   - בדוק שהמערכת פועלת ב-Streamlit Cloud
+   - רענן את הדפדפן (Ctrl+F5)
+
+4. עיצוב נוסף:
+   - שנה צבעים (color: #...)
+   - שנה רדיוס פינות (border-radius: ...)
+   - הוסף צללים (box-shadow: ...)
+
+==============================================
+-->
