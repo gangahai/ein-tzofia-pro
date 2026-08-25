@@ -1,0 +1,40 @@
+name: Deploy Ein Tsofia Website
+on:
+  push:
+    branches: [main]
+    paths:
+      - "website/ein-tsofia.zip"
+      - ".github/workflows/ein-tsofia-pages.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: "ein-tsofia-pages"
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Extract website
+        run: |
+          mkdir -p public
+          unzip -q -o website/ein-tsofia.zip -d public
+          rm -f public/vercel.json public/netlify.toml public/index.pre-redesign.html
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
